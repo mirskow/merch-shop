@@ -1,0 +1,35 @@
+linters:
+  enable:
+    - revive         # Проверка стиля кода
+    - errcheck       # Проверка ошибок
+    - staticcheck    # Статический анализ кода
+    - gosec          # Безопасность кода
+    - gocyclo        # Проверка цикломатической сложности функций
+    - unused         # Проверка на неиспользуемые переменные, функции и импорты
+    - bodyclose      # Проверка, что файлы или соединения закрываются
+    - typecheck      # Проверка типов
+    - misspell       # Проверка орфографии в коде
+
+run:
+  tests: false       # Не проверять тестовые файлы
+  skip-dirs:
+    - "vendor"       # Пропускать директорию с зависимостями
+  skip-files:
+    - ".*_test.go"   # Пропускать файлы с тестами
+  concurrency: 4     # Количество потоков, которые используются для линтинга
+
+issues:
+  exclude-files:
+    - ".*_test.go"   # Исключить тестовые файлы из анализа
+  exclude-dirs:
+    - "vendor"       # Исключить директорию зависимостей
+
+linters-settings:
+  golint:
+    min-confidence: 0.8    # Минимальная уверенность для golint
+  gocyclo:
+    max-complexity: 15     # Максимальная цикломатическая сложность функции
+  gosec:
+    severity: medium       # Уровень серьезности для gosec (low, medium, high)
+  errcheck:
+    exclude-pragma: true   # Игнорировать строки с // nolint
