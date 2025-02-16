@@ -57,4 +57,4 @@ vegeta attack -duration=30s -rate=1000/s -targets=targets.txt | vegeta report
 
 Результаты нагрузочного тестирования представлены на снимке.
 
-![Скриншот](assets/test.png)# merch-shop
+![Скриншот](assets/test.png)
